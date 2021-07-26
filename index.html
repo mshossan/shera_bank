@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/shera/favicon.png" type="image/x-icon">
+    <title>Shera Bank</title>
+</head>
+
+<body>
+    <div class="card loginArea" id="logIn">
+        <h1 class="text-gray logo">Welcome to </h1><br>
+        <div class="formArea">
+            <label for="username">Username </label>
+            <input type="email" name="" class="form-control" id="username" placeholder="Enter your name">
+            <label for="pwd">Password</label>
+            <input type="password" name="" class="form-control" id="pwd" placeholder="Enter your password"><br>
+            <button id="logInBtn" class="btn btn-success">Submit</button>
+        </div>
+    </div>
+    <div id="transactionArea">
+        <div class="d-flex">
+            <div class="card flex-box success">
+                <h4>Deposit</h4>
+                <h2 >$ <span id="currentDeposit">00</span></h2>
+            </div>
+            <div class="card flex-box danger">
+                <h4>Withdraw</h4>
+                <h2 >$  <span id="currentWithdraw">00</span> </h2>
+            </div>
+            <div class="card flex-box warning">
+                <h4>Balance</h4>
+                <h2 >$ <span id="currentBalance">1000</span></h2>
+            </div>
+        </div>
+        <div class="d-flex">
+            <div class="card flex-box ">
+                <h3>Deposit</h3>
+                <input type="text" name="" id="depositAmount" class="form-control">
+                <button class="btn btn-success" id="addDeposit">Enter</button>
+            </div>
+            <div class="card flex-box ">
+                <h3>Withdraw</h3>
+                <input type="text" name="" id="withdrawAmount" class="form-control">
+                <button class="btn btn-success"id="addWithdraw">Enter</button>
+            </div>
+        </div>
+
+    </div>
+<script>
+    //Login Button
+  const logIn= document.getElementById('logInBtn');
+  logIn.addEventListener('click',function () {
+    const logIn=document.getElementById('logIn');
+    logIn.style.display="none";
+    const showTransactionArea=document.getElementById('transactionArea');
+    showTransactionArea.style.display="block";
+  })
+  //deposit
+  const addDeposit=document.getElementById('addDeposit');
+  addDeposit.addEventListener('click',function () {
+       const depositAmountNumber= inputAmountNumber('depositAmount');
+  
+
+        updateSpanToCurrent('currentDeposit',depositAmountNumber);
+        updateSpanToCurrent('currentBalance',depositAmountNumber);
+    })
+    //withdraw
+    const addWithdraw=document.getElementById('addWithdraw');
+    addWithdraw.addEventListener('click',function () {
+        
+        const withdrawAmountNumber=inputAmountNumber('withdrawAmount');
+        updateSpanToCurrent('currentWithdraw',withdrawAmountNumber);
+        updateSpanToCurrent('currentBalance',-1*withdrawAmountNumber);
+    })
+    function inputAmountNumber(id) {
+        const amount=document.getElementById(id).value;
+        const amountNumber=parseFloat(amount);
+        return amountNumber;
+    }
+
+    function updateSpanToCurrent(id,depositAmountNumber) {
+        const current=document.getElementById(id).innerText;
+        const currentNumber=parseFloat(current);
+        const totalCurrent=depositAmountNumber+currentNumber;
+        document.getElementById(id).innerText=totalCurrent;
+        
+    }
+</script>
+</body>
+</html>

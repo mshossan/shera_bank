@@ -1,0 +1,113 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body{
+    font-family: sans-serif;
+    font-size: 16px;
+   margin: auto;
+    color:#3c3b3b;
+    letter-spacing: .03rem;
+    
+}
+.text-gray{
+    color:#00000094;
+}
+.logo::after{
+    content:"SHERA BANK";
+   color:green;
+   font-size: 35px;
+   font-weight:bold;
+   letter-spacing: 1px;
+   text-shadow: 2px 2px 3px #9a999999;
+   
+}
+.form-control{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding: .30rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    font-size: 16px;
+    border:1px solid #ced4da;
+    background-color: #fff;
+
+}
+.form-control:focus{
+    border-color:  #80bdff;
+    color: hsl(210, 9%, 31%);
+    outline: 0;
+    background-color: #fff;
+    box-shadow: 0 0 0 .2rem #19ec1938;
+}
+input[placeholder]{
+    padding:4px 15px ;
+}
+.btn{
+    border:none;
+    padding:6px 8px;
+    outline: none;
+    border-radius: 3px;
+   
+}
+.btn:focus{
+    box-shadow: 0 0 0 .2rem rgba(4, 82, 134, 0.25);
+}
+.btn-success{
+    color: #fff;
+    background-color: #2fab2f;
+    font-weight: 560;
+}
+.card{
+    border:2px solid#f4f4f4;
+    border-radius: 10px;
+    box-shadow:5px 5px 10px #d4d4d4;
+}
+.loginArea{ 
+    margin: 10%;
+    width:80%; 
+    padding:10%; 
+}
+.formArea{
+    width:100%;
+    margin: auto;
+}
+/* #transactionArea{
+    display: none;
+} */
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+    margin:5% 10% ;
+    justify-content: space-between;
+}
+.flex-box{
+    padding: 62px 30px;
+    margin:20px;
+    flex-grow: 1;
+}
+#transactionArea h4,h2{
+text-align: center;
+font-size: 20px;
+padding: 10px;
+}
+.danger{
+    background-color:#d9534f ;
+    color:#fff;
+    border:1px solid #ca2a258f
+}
+.success{
+    background-color:#449d44 ;
+    color:#fff;
+    border:1px solid #398439;
+}
+.warning{
+    background-color:#f0ad4e ;
+    color:#fff;
+    border:1px solid #eea236;
+}
+.m-20{
+   margin: 10px 0;
+}
