@@ -111,14 +111,14 @@ padding: 10px;
 .m-20{
    margin: 10px 0;
 }
+.m-100{
+    margin-top: 100px;
+}
 .time-area {
     width: 200px;
     margin: 10px;
- 
     border-radius: 5px;
     padding: 5px 10px;
-
- 
     box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
 }
 .time-area {
